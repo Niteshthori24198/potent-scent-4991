@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .login{
+            width: 80%;
+            display: flex;
+            /* border: 2px solid red; */
+            margin: 50px auto;
+            justify-content: space-evenly;
+            background-color: white;
+        }
+
+        .login > div:nth-child(1){
+          
+            width: 45%;
+            /* border: 2px solid green; */
+            margin: auto;
+            padding: 40px 10px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 20px;
+        }
+        .login > div:nth-child(2){
+           
+            width: 45%;
+            /* border: 2px solid red; */
+            margin: auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 20px;
+        }
+
+        .login > div:nth-child(2) > img{
+            width: 100%;
+           
+        }
+
+        .login a{
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: royalblue;
+            text-decoration: none;
+        }
+        .login a:hover{
+            text-decoration: underline;
+            color: green;
+        }
+        .login p{
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            color: royalblue;
+        }
+
+        body > div:nth-child(2){
+            margin-top: 80px;
+        }
+
+        body > div:nth-child(2) > h1{
+            text-align: justify;
+            width: 80%;
+            margin: 40px auto 0px auto;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        input{
+            width: 50%;
+            border-radius: 5px;
+            text-align: justify;
+            padding: 10px 15px;
+            margin: 15px auto;
+        }
+
+        button{
+            width: 56%;
+            border-radius: 20px;
+            text-align: center;
+            padding: 10px 15px;
+            margin: 15px auto;
+            color: white;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: rgb(3, 34, 127);
+        }
+        #foter{
+            width: 100%;
+            margin: 100px auto 10px auto;
+            
+        }
+        #foter > p{
+            font-family: Arial, Helvetica, sans-serif;
+            color: gray;
+            width: 75%;
+            margin: 15px auto;
+        }
+        #foter > p > span{
+            color: rgb(66, 66, 228);
+        }
+        #foter > section{
+            width: 100%;
+            margin: auto;
+            background-color: whitesmoke;
+        }
+        section > div{
+            padding: 2px 165px;
+        }
+        section > div p{
+            font-family: Arial, Helvetica, sans-serif;
+            color:gray;
+            font-size: 12px;
+        }
+        section > div > div:nth-child(2){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        section > div > div:nth-child(2) > a{
+            text-decoration: none;
+            color: gray;
+            font-size: 15px;
+        }
+        section > div > div:nth-child(2) > a:hover{
+            text-decoration: underline;
+            color: royalblue;
+            font-size: 15px;
+        }
+
+
+
+        .nav{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            margin: 0px auto 15px auto;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            /* border: 2px solid red ; */
+        
+        }
+        .nav > div:nth-child(1){
+            width: 6%;
+            height: 40px;
+            text-align: center; 
+        } 
+        .nav > div:nth-child(1) > a > img{
+            width: 25%;
+        }
+        .nav > div:nth-child(1) > img:hover{
+            cursor: pointer;
+        }
+        .nav > div:nth-child(2){
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: auto;
+            width: 70%;
+            margin-left: 100px;
+        }
+
+        .nav > div:nth-child(2) > a{
+            text-decoration: none;
+            color: lightgray;
+        }
+        .nav > div:nth-child(2) > a:hover{
+            color: white;
+        } 
+
+
+
+        @media all and (max-width:750px){
+            .login > div:nth-child(2){
+                display: none;
+            }
+            .nav > div:nth-child(2){
+                display: none;
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="nav">
+
+        <div>
+            <a href="/index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSc2hYe2AJumrwMWITtj6siJEvvsmuAD-DZg&usqp=CAU" alt=""></a>
+        </div>
+        <div>
+            <a href="#">Store</a>
+            <a href="#">Mac</a>
+            <a href="#">iPad</a>
+            <a href="#">iPhone</a>
+            <a href="#">Watch</a>
+            <a href="#">AirPods</a>
+            <a href="#">Tv & Home</a>
+            <a href="#">Only on Apple</a>
+            <a href="#">Accessories</a>
+            <a href="#">Support</a> 
+        </div>
+
+    </div>
+
+
+    <div>
+        <h1>Sign in for faster checkout.</h1>
+      
+    </div>
+   
+    
+    <div class="login">
+        <div>
+            <h2>Sign in to Apple Store</h2>
+            <input type="text" id="userid" placeholder="Apple ID">
+            <input type="password" id="pass" placeholder="Password">
+            <button id="signin">Sign In</button>
+            <div>
+                <p>New User ? </p>
+                <a href="/Day-4/register.html">Register here</a>
+            </div>
+           
+
+        </div>
+        <div>
+            <img src="/Day-4/Project logo.jpg" alt="">
+        </div>
+    </div>
+
+    <footer id="foter">
+
+        <hr>
+        <p>Need some help? <span>Chat Now</span> or call 1‑800‑MY‑APPLE.</p>
+        <section>
+            <div>
+                <div>
+                    <p>The Apple Online Store uses industry-standard encryption to protect the confidentiality of the information you submit. Learn more about our Security Policy.</p>
+                    <hr>
+                    <p>More ways to shop: Find an Apple Store or other retailer near you. Or call 1‑800‑MY‑APPLE.</p>
+                </div>
+                <div>
+                    <p>Copyright © 2023 Apple Inc. All rights reserved.</p>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Sales and Refunds</a>
+                    <a href="#">Legal</a>
+                    <a href="#">Unites State</a>
+                </div>
+            </div>
+           
+        </section>
+      
+
+    </footer>
+
+</body>
+</html>
+
+<script>
+
+    let userdata=JSON.parse(localStorage.getItem("data")) || [];
+
+    let userid=document.getElementById("userid");
+    let pwd=document.getElementById("userid");
+    let sibtn=document.getElementById("signin");
+
+    sibtn.addEventListener("click",function(){
+
+        if(userid.value!=="" && pwd.value!==""){
+            let un=userid.value;
+            let pw=pwd.value;
+            let obj={
+                uname:un,
+                upass:pw
+            }
+            let check=datacheck(obj);
+            if(check===true){
+                alert("Login Successfull !");
+
+                // User redirected to store page 
+            }
+            else{
+                alert("Kindly enter valid details !")
+            }
+        }
+        else{
+            alert("Kindly provide required fields !!");
+        }
+    })
+
+
+    function datacheck(obj){
+        if(userdata.includes(obj)===true){
+            return true;
+        }
+        else{
+            return false;
+        }
+    }
+
+
+</script>

@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+        .nav{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            margin: 0px auto 15px auto;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            /* border: 2px solid red ; */
+        
+        }
+        .nav > div:nth-child(1){
+            width: 6%;
+            height: 40px;
+            text-align: center; 
+        } 
+        .nav > div:nth-child(1) > a > img{
+            width: 25%;
+        }
+        .nav > div:nth-child(1) > img:hover{
+            cursor: pointer;
+        }
+        .nav > div:nth-child(2){
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: auto;
+            width: 70%;
+            margin-left: 100px;
+        }
+
+        .nav > div:nth-child(2) > a{
+            text-decoration: none;
+            color: lightgray;
+        }
+        .nav > div:nth-child(2) > a:hover{
+            color: white;
+        } 
+        #sutop{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;
+            /* border: 2px solid red; */
+            margin: 30px auto 20px auto;
+            padding: 0px 15px;
+        }
+        #sutop > div{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            width: 15%;
+            /* border: 1px solid red; */
+        }
+        #sutop > div >a{
+            color: black;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-decoration: none;
+            font-weight: bolder;
+        }
+        #sutop > div >a:hover{
+            text-decoration: underline;
+            color: red;
+        }
+        hr{
+            margin-top: -30px;
+        }
+        /* .registr{
+            border: 2px solid red;
+        } */
+        .registr > div {
+            /* border: 2px solid red; */
+            width: 35%;
+            margin: 20px auto;
+            padding: 10px;
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        }
+        .registr > div > div:nth-child(1){
+            margin: auto;
+            width: 100%;
+            /* border: 1px solid red; */
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .registr > div > div:nth-child(1) >p{
+            margin-top: -15px;
+        }
+        .registr > div > div:nth-child(2){
+            margin: auto;
+            width: 100%;
+            /* border: 1px solid red; */
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0px;
+        }
+        .registr > div > div:nth-child(2) > input{
+            padding: 15px 0px 15px 15px;
+            border-radius: 15px;
+            margin: auto 15px;
+            background-color: aliceblue;
+            width: 100%;
+        }
+
+        .registr > div > div:nth-child(3){
+            margin: auto;
+            width: 100%;
+            /* border: 1px solid red; */
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0px;
+        }
+
+        select{
+            width: 90%;
+            padding: 10px;
+            border-radius: 15px;
+            text-align: center;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: aliceblue;
+        }
+        #udata{
+            margin: auto;
+            width: 100%;
+            /* border: 1px solid red; */
+            text-align: center;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            padding: 15px 0px;
+        }
+        #udata > input{
+            padding: 15px 10px;
+            border-radius: 15px;
+            background-color: aliceblue;
+            width: 85%;
+            margin: 0px auto 10px auto;
+        }
+        #udata > p{
+            font-size: 12px;
+            color: gray;
+            font-family: Arial, Helvetica, sans-serif;
+            margin: -5px auto 4px 30px;
+        }
+        button{
+            padding: 15px 10px;
+            border-radius: 15px;
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+            width:80%;
+            margin: 10px auto;
+        }
+
+
+        #foter{
+            width: 100%;
+            margin: 100px auto 10px auto;
+            
+        }
+        #foter > p{
+            font-family: Arial, Helvetica, sans-serif;
+            color: gray;
+            width: 75%;
+            margin: 15px auto;
+        }
+        #foter > p > span{
+            color: rgb(66, 66, 228);
+        }
+        #foter > section{
+            width: 100%;
+            margin: auto;
+            background-color: whitesmoke;
+        }
+        section > div{
+            padding: 2px 165px;
+        }
+        section > div p{
+            font-family: Arial, Helvetica, sans-serif;
+            color:gray;
+            font-size: 12px;
+            line-height: 20px;
+        }
+        section > div > div:nth-child(2){
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        section > div > div:nth-child(2) > a{
+            text-decoration: none;
+            color: gray;
+            font-size: 15px;
+        }
+        section > div > div:nth-child(2) > a:hover{
+            text-decoration: underline;
+            color: royalblue;
+            font-size: 15px;
+        }
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="nav">
+
+        <div>
+            <a href="/index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSc2hYe2AJumrwMWITtj6siJEvvsmuAD-DZg&usqp=CAU" alt=""></a>
+        </div>
+        <div>
+            <a href="#">Store</a>
+            <a href="#">Mac</a>
+            <a href="#">iPad</a>
+            <a href="#">iPhone</a>
+            <a href="#">Watch</a>
+            <a href="#">AirPods</a>
+            <a href="#">Tv & Home</a>
+            <a href="#">Only on Apple</a>
+            <a href="#">Accessories</a>
+            <a href="#">Support</a> 
+        </div>
+
+    </div>
+
+    <div id="sutop">
+        <h2>Apple ID</h2>
+        <div>
+            <a href="login.html">Sign In</a>
+            <a href="#">FAQ</a>
+        </div>
+        
+    </div>
+    <hr>
+
+    <div class="registr">
+        <div>
+            <div>
+                <h1>Create Your Apple ID</h1>
+                <p>One Apple ID is all you need to access all Apple services.</p>
+            </div>
+    
+            <div>
+                <input type="text" placeholder="First Name" id="fn">
+                <input type="text" placeholder="Last Name" id="ln">
+            </div>
+    
+            <div>
+                <select name="" id="country">
+                    <option value="">Select a Country</option>
+                    <option value="India">India</option>
+                    <option value="Pakisthan">Pakisthan</option>
+                    <option value="New Zealand">New Zealand</option>
+                    <option value="Australia">Australia</option>
+                    <option value="United State">United State</option>
+                    <option value="United Kingdom">United Kingdom</option>
+                    <option value="China">China</option>
+                    <option value="Russia">Russia</option>
+                    <option value="Zermany">Zermany</option>
+                    <option value="France">France</option>
+                </select>
+            </div>
+    
+            <div id="udata">
+                <input type="text" placeholder="Email-id : user@gmail.com" id="uid">
+                <p>This will be your Apple ID.</p>
+                <input type="password" placeholder="Password" id="upw">
+                <input type="number" placeholder="Phone No" id="uph">
+                <button>Register</button>
+            </div>
+        </div>
+       
+
+    </div>
+
+
+    <footer id="foter">
+
+        <hr>
+        <p>Need some help? <span>Chat Now</span> or call 1‑800‑MY‑APPLE.</p>
+        <section>
+            <div>
+                <div>
+                    <p>The Apple Online Store uses industry-standard encryption to protect the confidentiality of the information you submit. Learn more about our Security Policy.</p>
+                    <hr>
+                    <p>More ways to shop: Find an Apple Store or other retailer near you. Or call 1‑800‑MY‑APPLE.</p>
+                </div>
+                <div>
+                    <p>Copyright © 2023 Apple Inc. All rights reserved.</p>
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Use</a>
+                    <a href="#">Sales and Refunds</a>
+                    <a href="#">Legal</a>
+                    <a href="#">Unites State</a>
+                </div>
+            </div>
+           
+        </section>
+      
+
+    </footer>
+
+
+</body>
+</html>
+
+<script>
+
+    let userdata=JSON.parse(localStorage.getItem("data")) || [];
+
+    let firstname=document.getElementById("fn");
+    let lastname=document.getElementById("ln");
+    let countrysel=document.getElementById("country");
+
+    let userid=document.getElementById("uid");
+    let userpwd=document.getElementById("upw");
+    let userphone=document.getElementById("uph");
+
+    let reg=document.querySelector("button");
+
+    reg.addEventListener("click",function(){
+        if(firstname.value!=="" && lastname.value!=="" && countrysel.value!=="" && userid.value!=="" && userpwd.value!=="" && userphone.value!==""){
+            let obj={
+                fnmae:firstname.value,
+                lname:lastname.value,
+                uid:userid.value,
+                upass:userpwd.value,
+                mobile:userphone.value
+            }
+            let dcheck=duplicate(obj);
+            if(dcheck===false){
+                alert("The user is already register with us. Kindly go to sign In page and login there !")
+            }
+            else{
+                userdata.push(obj);
+                localStorage.setItem("data",JSON.stringify(userdata));
+                alert("Registration has been done Successfully. Go to the sign page and login with the crendentials!");
+                window.location="login.html"
+            }
+        }
+        else{
+            alert("Kindly Provide the required details !");
+        }
+    })
+
+    function duplicate(obj){
+        let found=userdata.filter((e)=>{
+            return obj.uid===e.uid;
+        });
+
+        //console.log(found);
+        if(found.length===1){
+            return false;
+        }
+        else{
+            return true;
+        }
+    }
+
+</script>
