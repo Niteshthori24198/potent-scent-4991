@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Store</title>
+    <style>
+        body {
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            background-color: black;
+            width: 100%;
+            height: 40px;
+            display: flex;
+            margin: auto;
+            justify-content: space-around;
+            align-items: center;
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            /* border: 2px solid red ; */
+        
+        }
+        .nav:hover{
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        }
+        .nav > div:nth-child(1){
+            width: 6%;
+            height: 40px;
+            text-align: center; 
+        } 
+        .nav > div:nth-child(1) > a > img{
+            width: 25%;
+        }
+        .nav > div:nth-child(1) > img:hover{
+            cursor: pointer;
+        }
+        .nav > div:nth-child(2){
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            margin: auto;
+            width: 70%;
+            margin-left: 100px;
+        }
+
+        .nav > div:nth-child(2) > a{
+            text-decoration: none;
+            color: lightgray;
+        }
+        .nav > div:nth-child(2) > a:hover{
+            color: white;
+        } 
+        .nav > a{
+            text-decoration: none;
+            color: lightgray;
+            margin-right: 100px;
+        }
+        .nav > a:hover{
+            color: red;
+        }
+        .topcnt{
+            display: flex;
+            /* border: 2px solid red; */
+            width: 75%;
+            margin: 50px auto 0px auto;
+            padding: 10px;
+        }
+        .topcnt > div:nth-child(1){
+            /* border: 2px solid green; */
+            padding: 10px;
+            text-align: justify;
+            width: 65%;
+        }
+        .topcnt > div:nth-child(2){
+            /* border: 2px solid green; */
+            padding: 10px;
+            text-align: justify;
+            width: 35%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .topcnt > div:nth-child(1) > h1 > span{
+            color:gray
+        }
+        .topcnt > div:nth-child(1) > h1{
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 50px;
+            font-size: 40px;
+        }
+        .topcnt > div:nth-child(2) > div{
+            display: flex;
+            /* border: 2px solid black; */
+            justify-content: space-around;
+            align-items: center;
+            width: 75%;
+            margin: auto auto auto 150px;
+        }
+        .topcnt > div:nth-child(2) > div > img{
+            border-radius: 50%;
+            width: 25%;
+            height: 100%;
+        }
+        .topcnt > div:nth-child(2) > div > div{
+            /* border: 2px solid red; */
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+        }
+        .topcnt > div:nth-child(2) > div > div >p{
+            font-size: 14px;
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 0px;
+            
+        }
+        .topcnt > div:nth-child(2) > div > div > p:nth-child(2){
+            color:royalblue;
+            font-size: 14px;
+        }
+        .product{
+            display: grid;
+            grid-template-columns: repeat(5,1fr);
+            width: 90%;
+            margin: 25px auto ;
+            gap: 10px;
+
+        }
+        .product > div{
+            box-shadow: 2px 4px 12px rgb(0 0 0 / 8%);
+            text-align: center;
+            padding: 10px;
+            border-radius: 20px;
+        }
+
+        .product > div:hover{
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        }
+
+
+        .specsec{
+            /* border: 2px solid red; */
+            width: 80%;
+            margin: auto;
+            padding: 10px;
+            
+        }
+        .specsec span{
+            color: gray;
+        }
+        #sec{
+            /* border: 5px solid green; */
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 20px;
+            width: 100%;
+            
+        }
+        #sec > div:nth-child(1){
+            /* border: 2px solid red; */
+            text-align: center;
+            padding-top: 10px;
+            width: 100%;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        }
+
+        #sec > div:nth-child(1) > img{
+            width: 100%;
+            border-radius: 25px;
+
+        }
+        #sec > div:nth-child(1) > p{
+            position: relative;
+            top: 10px;
+            left: 20px;
+            text-align: justify;
+            font-family: Arial, Helvetica, sans-serif;
+            color: gray;
+            font-size: 15px;
+        }
+        #sec > div:nth-child(1) > h3{
+            position: relative;
+            top: 10px;
+            left: 20px;
+            text-align: left;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 24px;
+            padding: 0px 25px 0px 0px;
+            width: 80%;
+        }
+
+        #sec > div:nth-child(2){
+            /* border: 2px solid red; */
+            text-align: center;
+            /* padding-top: 10px; */
+            margin: auto;
+            width: 100%;
+            border-radius: 25px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        } 
+
+        #sec > div:nth-child(2) > div:nth-child(1) > h3{
+            position: relative;
+            top: 0px;
+            left: 10px;
+            font-size: 25px;
+            text-align: left;
+            padding-left: 10px;
+            width: 80%;
+        }
+        #sec > div:nth-child(2) img{
+            width: 100%;
+            border-radius: 25px;
+        }
+        #sec > div:nth-child(2) > div:nth-child(2) > h3{
+            position: relative;
+            top: 200px;
+            left: 10px;
+            font-size: 25px;
+            text-align: left;
+            padding-left: 10px;
+            width: 45%;
+        }
+        #sec > div:nth-child(2) > div:nth-child(2){
+            margin-top: -125px;
+            
+        }
+
+
+        #sec > div:nth-child(2) > div:nth-child(1){
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            border-radius: 25px;
+        }
+       
+        .exp{
+            /* border: 5px solid red; */
+            width: 90%;
+            margin: 25px auto;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 25px;
+        }
+        .exp span{
+            color: gray;
+        }
+
+        #expcont{
+            /* border: 4px solid black; */
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+            width: 100%;
+        }
+        #expcont > div{
+            /* border: 2px solid green; */
+            border-radius: 20px;
+            padding: 10px 10px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        #expcont > div:hover{
+            box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+        }
+
+        #expcont h2{
+            position: relative;
+            top: 20px;
+            left: 5px;
+        }
+        #expcont img{
+            width: 100%;
+            border-radius: 20px;
+        }
+
+        .specstore{
+            width: 90%;
+            margin: 25px auto;
+            font-family: Arial, Helvetica, sans-serif;
+            padding-left: 25px;
+            /* border: 2px solid red; */
+        }
+        .specstore span{
+            color: gray;
+        }
+
+        #storecont{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            gap: 15px;
+            width: 100%;
+            /* border: 2px solid black; */
+        }
+
+        #storecont > div{
+            border-radius: 20px;
+            padding: 10px 10px;
+            box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+        }
+        #storecont > div:hover{
+            box-shadow: rgba(0, 0, 0, 0.56) 0px 22px 70px 4px;
+        }
+        #storecont img{
+            width: 100%;
+            border-radius: 20px;
+        }
+        #storecont p{
+            color: gray;
+            font-size: 12px;
+        }
+        #storecont > div:nth-child(2){
+            background-color: rgb(39, 29, 29);
+            color: white;
+        }
+        #storecont > div:nth-child(3){
+            background-color: rgb(4, 1, 1);
+            color: white;
+        }
+
+        .bottom{
+            background-color: whitesmoke;
+            /* border: 2px solid red; */
+            width: 100%;
+            margin: 50px auto 0px auto;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        }
+
+        .bottom > div{
+            width: 70%;
+            margin: auto;
+            /* border: 2px solid green; */
+            text-align: justify;
+            padding: 15px;
+        }
+        .bottom > div:nth-child(1) p{
+            color: black;
+            font-size: 12px;
+            line-height: 20px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        hr{
+            width: 75%;
+            margin: 10px auto 0px auto;
+            font-size: 25px;
+            font-weight: bolder;
+        }
+
+        #links{
+            display: flex;
+            margin: auto;
+            padding: 5px 10px;
+        }
+        .bottom > p {
+            width: 70%;
+            margin: auto;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            color: gray;
+        }
+        .bottom > p > span {
+            color: rgb(14, 154, 200);
+        }
+
+        .bottom > div:nth-child(6){
+            display: flex;
+            margin: -20px auto;
+            width: 70%;
+            justify-content: space-between;
+            align-items: center;
+            text-align: justify;
+         
+        }
+        .bottom > div:nth-child(6) > a{
+            text-decoration: none;
+            color:  gray;
+            font-size: 15px;
+        }
+        .bottom > div:nth-child(6) > p{
+            color:  gray;
+            font-size: 14px;
+        }
+        .bottom > div:nth-child(6) > a:hover{
+            text-decoration: underline;
+            color:   rgb(14, 154, 200);
+        }
+
+
+        #links > div {
+        /* border: 2px solid black; */
+        width: 20%;
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        }
+        #links > div > div{
+            /* border: 2px solid black; */
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #links a{
+            padding: 5px 0px;
+            text-decoration: none;
+            color: rgb(18, 2, 2);
+            font-size: 12px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #links a:hover{
+            text-decoration: underline;
+            color: green;
+        }
+
+
+
+    </style>
+</head>
+<body>
+      <!-- Nav _bar section  -->
+    <div class="nav">
+
+        <div>
+            <a href="/index.html"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQSc2hYe2AJumrwMWITtj6siJEvvsmuAD-DZg&usqp=CAU" alt=""></a>
+        </div>
+
+        <div>
+            <a href="/Day-5/store.html">Store</a>
+            <a href="#">Mac</a>
+            <a href="#">iPad</a>
+            <a href="#">iPhone</a>
+            <a href="#">Watch</a>
+            <a href="#">AirPods</a>
+            <a href="#">Tv & Home</a>
+            <a href="#">Only on Apple</a>
+            <a href="#">Accessories</a>
+            <a href="#">Support</a> 
+        </div>
+        <a href="/Day-4/login.html">Logout</a>
+
+    </div>
+
+
+    <!-- Top-section -->
+
+    <div class="topcnt">
+
+        <div>
+            <h1>Store.<span>The best way to buy the products you love.</span></h1>
+        </div>
+        <div>
+            <div>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-chat-specialist-icon-202211_AV1_GEO_US?wid=70&hei=70&fmt=jpeg&qlt=90&.v=1671246164105" alt="">
+                <div>
+                    <p>Need shopping help?</p>
+                    <p>Ask a Specialist</p>
+                </div>
+              
+            </div>
+        </div>
+    </div>
+
+    <div class="product">
+        <!-- all div here -->
+
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-14-16-mac-nav-202301?wid=200&hei=130&fmt=png-alpha&.v=1670959891635" alt="">
+            <h4>Mac</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-iphone-nav-202209_GEO_US?wid=200&hei=130&fmt=png-alpha&.v=1661027785546" alt="">
+            <h4>iPhone</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-ipad-nav-202210?wid=200&hei=130&fmt=png-alpha&.v=1664912135437" alt="">
+            <h4>iPad</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-watch-nav-202209?wid=200&hei=130&fmt=png-alpha&.v=1661796454103" alt="">
+            <h4>Apple Watch</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-airpods-nav-202209?wid=200&hei=130&fmt=png-alpha&.v=1660676485885" alt="">
+            <h4>AirPods</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-airtags-nav-202108?wid=200&hei=130&fmt=png-alpha&.v=1625783380000" alt="">
+            <h4>AirTag</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-appletv-nav-202210?wid=200&hei=130&fmt=png-alpha&.v=1664628458484" alt="">
+            <h4>Apple TV 4k</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-homepod-nav-202301?wid=200&hei=130&fmt=png-alpha&.v=1670389216654" alt="">
+            <h4>HomePod</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-accessories-nav-202209?wid=200&hei=130&fmt=png-alpha&.v=1660677092974" alt="">
+            <h4>Accessories</h4>
+        </div>
+        <div>
+            <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-13-holiday-giftcards-asit-agc-nav-202111?wid=200&hei=130&fmt=png-alpha&.v=1653339351054" alt="">
+            <h4>Apple Gift Card</h4>
+        </div>
+
+
+    </div>
+
+    <div class="specsec">
+        <h1>Help is here. <span>Whenever and however you need it.</span></h1>
+        <div id="sec">
+
+            <div>
+                <p>APPLE SPECIALIST</p>
+                <h3>Shop one on one with a Specialist. Online or in a store.</h3>
+                <img src="/Day-5/specialist-help-202211.jpg" alt="">
+            </div>
+
+            <div>
+
+                <div>
+                    <h3>Get to know your new device with a free Personal Session.</h3>
+                    <img src="/Day-5/store-card-25-apps-202108.jpg" alt="">
+                </div>
+              
+                
+                <div>
+                    <h3>Get expert service and support at the Genius Bar.</h3>
+                    <img src="/Day-5/store-card-25-genius-202108.jpg" alt="">
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="exp">
+        <h2>The Apple experience. <span>Do even more with Apple products and services.</span></h2>
+        <div id="expcont">
+            <div>
+                <h2>Six Apple services. One easy subscription.</h2>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-50-subscriptions-202108_GEO_US?wid=480&hei=500&fmt=p-jpg&qlt=95&.v=1626375546000" alt="">
+
+            </div>
+            <div>
+                <h2>We've got you covered.</h2>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-applecare-202301?wid=389&hei=405&fmt=p-jpg&qlt=95&.v=1672770914413" alt="">
+
+            </div>
+            <div>
+                <h2>Discover all the ways to use Apple Pay.</h2>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-50-applepay-202209?wid=480&hei=500&fmt=p-jpg&qlt=95&.v=1661873199894" alt="">
+
+            </div>
+            <div>
+                <h2>See how one app can control your entire home.</h2>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-50-homekit-202301?wid=480&hei=500&fmt=jpeg&qlt=95&.v=1670880984728" alt="">
+
+            </div>
+        </div>
+    </div>
+
+    <div class="specstore">
+        <h2>Special stores. <span> Exclusive savings for businesses, school, and more.</span></h2>
+
+        <div id="storecont">
+            <div>
+                <p>EDUCATION</p>
+                <h3>Save on Mac or iPad with education pricing.</h3>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-edu-202301?wid=200&hei=250&fmt=p-jpg&qlt=95&.v=1670866608869" alt="">
+
+            </div>
+            <div>
+                <p>BUSINESS</p>
+                <h3>From enterprise to small business, we’ll work with you.</h3>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-business-202209?wid=400&hei=500&fmt=jpeg&qlt=95&.v=1660927783133" alt="">
+
+            </div>
+            <div>
+                <p>GOVERENMENT</p>
+                <h3>Special pricing is available for state, local, and federal agencies.</h3>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-gov-202301?wid=400&hei=500&fmt=p-jpg&qlt=95&.v=1670437406729" alt="">
+
+            </div>
+            <div>
+                <p>CERTIFIED REFURBISHED</p>
+                <h3>Shop refurbished Apple products backed by a one‑year warranty</h3>
+                <img src="https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/store-card-40-refurb-202108?wid=400&hei=500&fmt=p-jpg&qlt=95&.v=1627318783000" alt="">
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- bottom-section -->
+
+    <div class="bottom">
+        <div>
+            <p>To access and use all the features of Apple Card, you must add Apple Card to Wallet on an iPhone or iPad with the latest version of iOS or iPadOS. Update to the latest version by going to Settings > General > Software Update. Tap Download and Install.</p>
+            <p>Available for qualifying applicants in the United States.</p>
+            <p>Apple Card is issued by Goldman Sachs Bank USA, Salt Lake City Branch.</p>
+            <p>Learn more about how Apple Card applications are evaluated at support.apple.com/kb/HT209218.</p>
+        </div>
+        <hr>
+        <div id="links">
+
+            <div>
+                <h4>Shop and Learn</h4>
+                <a href="#">Store</a>
+                <a href="#">Mac</a>
+                <a href="#">iPad</a>
+                <a href="#">iPhoone</a>
+                <a href="#">Watch</a>
+                <a href="#">AirPods</a>
+                <a href="#">Tv & Home</a>
+                <a href="#">AirTag</a>
+                <a href="#">Accessories</a>
+                <a href="#">Gift Cards</a>
+            </div>
+
+            <div>
+                <div>
+                    <h4>Services</h4>
+                    <a href="#">Apple Music</a>
+                    <a href="#">Apple Tv+</a>
+                    <a href="#">Apple Fitness+</a>
+                    <a href="#">Apple News+</a>
+                    <a href="#">Apple Arcad</a>
+                    <a href="#">iCloud</a>
+                    <a href="#">Apple One</a>
+                    <a href="#">Apple Card</a>
+                    <a href="#">Apple Books</a>
+                    <a href="#">Apple Podcast</a>
+                    <a href="#">Apple Store</a>
+                </div>
+                <div>
+                    <h4>Account</h4>
+                    <a href="#">Manage Your Apple ID</a>
+                    <a href="#">Apple Store Account</a>
+                    <a href="#">iCloud.com</a>
+                </div>
+                
+
+            </div>
+
+            <div>
+                <h4>Apple Store</h4>
+                <a href="#">Find a Store</a>
+                <a href="#">Genius Bar</a>
+                <a href="#">Today at Apple</a>
+                <a href="#">Apple Store App</a>
+                <a href="#">Refurbished & Clearance</a>
+                <a href="#">Financing</a>
+                <a href="#">Apple Trade In</a>
+                <a href="#">Order Status</a>
+                <a href="#">Shopping Help</a>
+            </div>
+
+            <div>
+                <div>
+                    <h4>For Business</h4>
+                    <a href="#">Apple and Business</a>
+                    <a href="#">Shop for Business</a>
+                </div>
+                <div>
+                    <h4>For Education</h4>
+                    <a href="#">Apple and Education</a>
+                    <a href="#">Shop for K-12</a>
+                    <a href="#">Shop for College</a>
+                </div>
+                <div>
+                    <h4>For Healthcare</h4>
+                    <a href="#">Apple in Healthcare</a>
+                    <a href="#">Health on Apple Watch</a>
+                    <a href="#">Health Records on iPhone</a>
+                </div>
+                <div>
+                    <h4>For Government</h4>
+                    <a href="#">Shop for Government</a>
+                    <a href="#">Shop for Veterans & Military</a>
+                </div>
+            </div>
+
+            <div>
+                <div>
+                    <h4>Apple Values</h4>
+                    <a href="#">Accessibility</a>
+                    <a href="#">Education</a>
+                    <a href="#">Environment</a>
+                    <a href="#">Inclusion & Diversity</a>
+                    <a href="#">Privacy</a>
+                    <a href="#">Racial Equity and Justice</a>
+                    <a href="#">Supplier Responsibility</a>
+                </div>
+
+                <div>
+                    <h4>About Apple</h4>
+                    <a href="#">Newsroom</a>
+                    <a href="#">Apple Leadership</a>
+                    <a href="#">Career Opportunities</a>
+                    <a href="#">Investors</a>
+                    <a href="#">Ethics & Compliance</a>
+                    <a href="#">Events</a>
+                    <a href="#">Contact Apple</a>
+                </div>
+            </div>
+
+        </div>
+
+        <p>More ways to shop: <span>Find an Apple Store</span>  or <span>other retailer</span>  near you. Or call 1-800-MY-APPLE.</p>
+
+        <hr>
+
+        <div>
+            <p>Copyright © 2023 Apple Inc. All rights reserved.</p>
+            <a href="#">Privacy Policy</a>
+            <a href="#"> Terms of Use</a>
+            <a href="#"> Sales and Refunds</a>
+            <a href="#"> Legal</a>
+            <a href="#"> Site Map</a>
+            <a href="#">United State</a>
+        </div>
+
+    </div>
+
+
+</body>
+</html>
