@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple DataBase</title>
+
+    <style>
+
+        .nav{
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            background-color: black;
+            height: 60px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: white;
+            font-size: 30px;
+        }
+
+        .nav > a{
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+        }
+        .nav > a:hover{
+            text-decoration: underline;
+            color: blue;
+        }
+
+        .nav > img{
+            width: 50px;
+            border-radius: 100%;
+        }
+
+        .database{
+            width: 69%;
+            margin: 150px auto 25px auto;
+            box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+        }
+
+        th{
+            background-color: orangered;
+            color: blue;
+            font-size: 25px;
+            padding: 10px;
+        }
+        table{
+            text-align: center;
+            border-collapse: separate;
+            margin: auto;
+            border: 2px solid rebeccapurple;
+        }
+
+        #rbtn{
+            border: none;
+            color: white;
+            background-color: rgb(254, 23, 23);
+        }
+
+
+    </style>
+
+</head>
+<body>
+
+    <div class="nav">
+        <img src="/Day-4/Project logo.jpg" alt="">
+        <h2>Apple Database</h2>
+        <a href="/index.html">Sign Out</a>
+    </div>
+
+
+    <div class="database">
+
+        <table>
+            <thead>
+                <tr>
+                    <th>User Apple ID</th>
+                    <th>Password</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Country</th>
+                    <th>Phone No</th>
+                    <th>Manage</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <!-- All data goes here -->
+
+            </tbody>
+        </table>
+
+
+    </div>
+
+    
+</body>
+</html>
+
+<script>
+
+    let userdata=JSON.parse(localStorage.getItem("data")) || [];
+
+    let bodyele=document.querySelector("tbody");
+
+    Display(userdata);
+
+
+    function Display(showdata){
+
+        bodyele.innerHTML=null;
+
+        showdata.forEach((element,index) => {
+
+            let tr=document.createElement("tr");
+            let td1=document.createElement("td");
+            let td2=document.createElement("td");
+            let td3=document.createElement("td");
+            let td4=document.createElement("td");
+            let td5=document.createElement("td");
+            let td6=document.createElement("td");
+            let td7=document.createElement("button");
+
+            td1.innerText=element.uid;
+            td2.innerText=element.upass;
+            td3.innerText=element.fname;
+            td4.innerText=element.lname;
+            td5.innerText=element.ucountry;
+            td6.innerText=element.mobile;
+
+            td7.innerText="Delete";
+            td7.setAttribute("id","rbtn");
+
+            tr.append(td1,td2,td3,td4,td5,td6,td7);
+
+            bodyele.append(tr);
+
+            td7.addEventListener("click",function(){
+                let dlt=userdata.splice(index,1);
+                localStorage.setItem("data",JSON.stringify(userdata));
+                Display(userdata);
+            })
+
+        });
+    
+    }
+
+
+
+</script>

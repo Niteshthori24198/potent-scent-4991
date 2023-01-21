@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
+    <title>Admin Page</title>
     <style>
 
         body {
@@ -16,7 +16,7 @@
             width: 80%;
             display: flex;
             /* border: 2px solid red; */
-            margin: 50px auto;
+            margin: 100px auto 20px auto;
             justify-content: space-evenly;
             background-color: white;
         }
@@ -70,17 +70,6 @@
             color: royalblue;
         }
 
-        body > div:nth-child(2){
-            margin-top: 80px;
-        }
-
-        body > div:nth-child(2) > h1{
-            text-align: justify;
-            width: 80%;
-            margin: 40px auto 0px auto;
-            font-family: Arial, Helvetica, sans-serif;
-        }
-
         input{
             width: 50%;
             border-radius: 5px;
@@ -100,50 +89,6 @@
             font-family: Arial, Helvetica, sans-serif;
             background-color: rgb(3, 34, 127);
         }
-        #foter{
-            width: 100%;
-            margin: 100px auto 10px auto;
-            
-        }
-        #foter > p{
-            font-family: Arial, Helvetica, sans-serif;
-            color: gray;
-            width: 75%;
-            margin: 15px auto;
-        }
-        #foter > p > span{
-            color: rgb(66, 66, 228);
-        }
-        #foter > section{
-            width: 100%;
-            margin: auto;
-            background-color: whitesmoke;
-        }
-        section > div{
-            padding: 2px 165px;
-        }
-        section > div p{
-            font-family: Arial, Helvetica, sans-serif;
-            color:gray;
-            font-size: 12px;
-        }
-        section > div > div:nth-child(2){
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        section > div > div:nth-child(2) > a{
-            text-decoration: none;
-            color: gray;
-            font-size: 15px;
-        }
-        section > div > div:nth-child(2) > a:hover{
-            text-decoration: underline;
-            color: royalblue;
-            font-size: 15px;
-        }
-
-
 
         .nav{
             position: fixed;
@@ -222,64 +167,27 @@
         </div>
 
     </div>
-
-
-    <div>
-        <h1>Sign in for faster checkout.</h1>
-      
-    </div>
-   
+  
     
     <div class="login">
         <div>
-            <h2>Sign in to Apple Store</h2>
-            <input type="text" id="userid" placeholder="Apple ID">
+
+            <h2>Sign in to Apple Administration</h2>
+            <input type="text" id="userid" placeholder="Admin ID">
             <input type="password" id="pass" placeholder="Password">
             <button id="signin">Sign In</button>
-            <div>
-                <p>New User ? </p>
-                <a href="/Day-4/register.html">Register here</a>
-            </div>
            
-
         </div>
         <div>
             <img src="/Day-4/Project logo.jpg" alt="">
         </div>
     </div>
 
-    <footer id="foter">
-
-        <hr>
-        <p>Need some help? <span>Chat Now</span> or call 1‑800‑MY‑APPLE.</p>
-        <section>
-            <div>
-                <div>
-                    <p>The Apple Online Store uses industry-standard encryption to protect the confidentiality of the information you submit. Learn more about our Security Policy.</p>
-                    <hr>
-                    <p>More ways to shop: Find an Apple Store or other retailer near you. Or call 1‑800‑MY‑APPLE.</p>
-                </div>
-                <div>
-                    <p>Copyright © 2023 Apple Inc. All rights reserved.</p>
-                    <a href="#">Privacy Policy</a>
-                    <a href="#">Terms of Use</a>
-                    <a href="#">Sales and Refunds</a>
-                    <a href="#">Legal</a>
-                    <a href="#">Unites State</a>
-                </div>
-            </div>
-           
-        </section>
-      
-
-    </footer>
 
 </body>
 </html>
 
 <script>
-
-    let userdata=JSON.parse(localStorage.getItem("data")) || [];
 
     let userid=document.getElementById("userid");
     let pwd=document.getElementById("pass");
@@ -290,42 +198,21 @@
         if(userid.value!=="" && pwd.value!==""){
             let un=userid.value;
             let pw=pwd.value;
-            let obj={
-                uname:un,
-                upass:pw
-            }
-            console.log(obj)
-            let check=datacheck(obj);
-            if(check===true){
+            if(un==="Admin" && pw==="Admin@1"){
+
                 alert("Login Successfull !");
-                window.location="/Day-5/store.html"
-                // User redirected to store page 
+                
+                window.location="database.html";
+                // User redirected to Backend database page 
             }
             else{
-                alert("Kindly enter valid details or user might not exists!")
+                alert("Kindly enter valid details or you are not Admin !")
             }
         }
         else{
-            alert("Kindly provide required fields !!");
+            alert("Either data you have entered is wrong or you are not Admin !");
         }
     })
-
-
-    function datacheck(obj){
-        let flag=0;
-       userdata.forEach((element) => {
-        if(element.uid===obj.uname && element.upass===obj.upass){
-            flag=1;
-        }
-        
-       });
-       if(flag===1){
-        return true;
-       }
-       else{
-        return false;
-       }
-    }
 
 
 </script>
