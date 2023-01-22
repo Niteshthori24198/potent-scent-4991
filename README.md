@@ -80,7 +80,7 @@ I have implemented the HTML using Javascript to make it faster.
 
 ## Include Credits
 
-I would like to thank my project colloborater  Mr. Saheen Ahemad Khan for the support to build this project. He is very supportive and motivating. It was a great pleasure for me to work with him.
+I would like to thank my project colloborater  Mr. Shaheen Ahmad Khan for the support to build this project. He is very supportive and motivating. It was a great pleasure for me to work with him.
 
 ## License
 
